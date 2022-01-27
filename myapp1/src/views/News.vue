@@ -3,30 +3,14 @@
     <div class="content-item">
       <h3 class="post-title">Появился список игр, совместимых со Steam Deck</h3>
       <div class="post-date">21.01.2022, 08:27</div>
+      <app-news></app-news>
       <div class="content-area">
         <img
           class="post-image"
           src="./../assets/hardware.jpg"
           alt="post-image"
         />
-        <p class="post-text">
-          Портал SteamDB представил список игр, которые полностью совместимы с
-          портативной консолью Steam Deck. На момент публикации материала таких
-          тайтлов 38, среди них Portal 2, Dishonored, Cuphead, Death Stranding и
-          Sekiro: Shadows Die Twice. <br />
-          <br />Помимо этого, на SteamDB можно ознакомиться со списком
-          «играбельных» тайтлов. 24 продукта из библиотеки Steam можно будет
-          запустить на портативной консоли, но с некоторыми некритическими
-          ошибками, для исправления которых потребуются дополнительные
-          настройки. В их число вошли The Witcher 3: Wild Hunt, Valheim и
-          NieR:Automata. Пять игр пока полностью недоступны на Steam Deck, среди
-          них Persona 4 Golden. <br />
-          <br />
-          Ранее представители компании Valve заверили пользователей, что
-          портативные консоли Steam Deck будут отправлены покупателям в конце
-          февраля. Переносы релиза не ожидаются, несмотря на проблемы с
-          логистикой, вызванные пандемией коронавируса.
-        </p>
+        <p class="post-text"></p>
       </div>
       <hr />
     </div>
@@ -75,10 +59,22 @@
 </template>
 
 <script>
+import AppNews from '../components/AppNews.vue'
 export default {
-  name: 'Content'
+  data () {
+    return {
+      now: new Date().toLocaleDateString(),
+      isOpen: false,
+      news: [
+        'Появился список игр, совместимых со Steam Decks',
+        'Lol kek cheburek'
+      ]
+    }
+  },
+  components: {
+    'app-news': AppNews
+  }
 }
 </script>
 <style scoped>
-
 </style>
