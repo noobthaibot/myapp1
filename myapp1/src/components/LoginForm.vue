@@ -2,9 +2,8 @@
     <div>
         <my-input label="Введите логин" :modelValue="name" @update="onUpdate" v-model="name"/>
         <my-input label="Введите пароль" :modelValue="password" @update="onUpdatePass" v-model="password"/>
-        <my-input label="Повторите пароль" :modelValue="secondPassword" @update="onUpdateSecondPass" v-model="secondPassword"/>
         <div>
-            <button @click="doRegistration">Регистрация</button>
+            <button @click="doLogin">Войти</button>
         </div>
     </div>
 </template>
@@ -15,22 +14,16 @@ export default {
   data () {
     return {
       name: '',
-      password: '',
-      secondPassword: ''
+      password: ''
     }
   },
   methods: {
-    doRegistration () {
-      alert('Вы успешно зарегистритовались!')
-    },
+    doLogin () {},
     onUpdate (modelValue) {
       this.name = modelValue
     },
     onUpdatePass (modelValue) {
       this.password = modelValue
-    },
-    onUpdateSecondPass (modelValue) {
-      this.secondPassword = modelValue
     }
   }
 }

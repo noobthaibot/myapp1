@@ -1,10 +1,31 @@
 <template>
   <div class="header">
     <button class="button" @click="goto('onLogin')">Войти</button>
-    <button class="button reg" @click="goto('registration')">Регистрация</button>
+    <button class="button reg" @click="showLoginDialog">Регистрация</button>
+    <my-dialog
+    v-if="isDiagloShown"
+    @close="dialogClose" />
   </div>
 </template>
-
+<script>
+import MyDialog from './ui/MyDialog.vue'
+export default {
+  components: { MyDialog },
+  data () {
+    return {
+      isDiagloShown: false
+    }
+  },
+  methods: {
+    showLoginDialog () {
+      this.isDiagloShown = true
+    },
+    dialogClose () {
+      this.isDiagloShown = false
+    }
+  }
+}
+</script>
 <style>
 .button {
   position: absolute;

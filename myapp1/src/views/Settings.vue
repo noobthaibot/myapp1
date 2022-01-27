@@ -1,10 +1,13 @@
 <template>
-  <div class="settings">Settings</div>
-  <my-input label="Введите логин" />
+<registration-form></registration-form>
+<login-form></login-form>
 </template>
 
 <script>
+import LoginForm from '../components/LoginForm.vue'
+import RegistrationForm from '../components/RegistrationForm.vue'
 export default {
+  components: { RegistrationForm, LoginForm },
   data () {
     return {
       name: ''
