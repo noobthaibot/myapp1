@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>
+  <div class="input-margin">
+    <div class="input-container">
       <label for="name">{{label}}</label>
       <input id="name" v-model="s" />
     </div>
@@ -38,3 +38,18 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+.input-container input {
+  height: 30px;
+}
+.input-margin {
+  margin-bottom: 10px;
+}
+</style>

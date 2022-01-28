@@ -6,7 +6,7 @@
           <div class="modal-header">
             <RegistrationForm />
               <button class="modal-default-button" @click="$emit('close')">
-                OK
+                <img class="close" src="./../../assets/cancel-circle.png" alt="">
               </button>
           </div>
         </div>
@@ -41,7 +41,7 @@ export default {
 }
 
 .modal-container {
-  width: 300px;
+  width: 400px;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
@@ -49,6 +49,7 @@ export default {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
   font-family: Helvetica, Arial, sans-serif;
+  position: relative;
 }
 
 .modal-header h3 {
@@ -86,5 +87,10 @@ export default {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-
+.close {
+  position: absolute;
+  bottom: 25px;
+  right: 20px;
+  cursor: pointer;
+}
 </style>
