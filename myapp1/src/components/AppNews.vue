@@ -4,9 +4,10 @@
       <h3 class="post-title">{{ title }}</h3>
     <button class="btn" @click="isOpen = !isOpen">Open</button>
     </div>
-    <p class="post-text" v-if="isOpen">
-      {{text}}
-    </p>
+    <div class="news-area" v-if="isOpen">
+      <img src="{{ image }}" alt="">
+      <p class="post-text">{{text}}</p>
+    </div>
   </div>
 </template>
 
@@ -18,7 +19,8 @@ export default {
       required: true
     },
     text: String,
-    id: Number
+    id: Number,
+    image: String
   },
   data () {
     return {

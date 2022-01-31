@@ -4,7 +4,8 @@
       <div class="modal-wrapper" @click="$emit('close')">
         <div class="modal-container" @click.stop>
           <div class="modal-header">
-            <RegistrationForm />
+            <slot name="reg"></slot>
+            <slot name="log"></slot>
               <button class="modal-default-button" @click="$emit('close')">
                 <img class="close" src="./../../assets/cancel-circle.png" alt="">
               </button>
@@ -16,10 +17,8 @@
 </template>
 
 <script>
-import RegistrationForm from '../RegistrationForm.vue'
 export default {
-  components: { RegistrationForm },
-  name: 'MyDialog'
+  components: {}
 }
 </script>
 <style scoped>
