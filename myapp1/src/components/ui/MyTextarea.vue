@@ -1,15 +1,15 @@
 <template>
   <div class="input-margin">
     <div class="input-container">
-      <label for="name">{{label}}</label>
-      <input id="name" v-model="s" />
+      <label for="textarea">{{label}}</label>
+      <input id="textarea" v-model="s" type="textarea" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'MyCustomInput',
+  name: 'MyTextarea',
   props: {
     modelValue: {
       type: String,
@@ -39,14 +39,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .input-container {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.input-container input {
-  height: 30px;
+input {
+  width: 600px;
+  height: 200px;
 }
 .input-margin {
   margin-bottom: 10px;
