@@ -5,7 +5,11 @@
     <button class="btn" @click="isOpen = !isOpen">Open</button>
     </div>
     <div class="news-area" v-if="isOpen">
+<<<<<<< HEAD
       <img :src="image" alt="">
+=======
+      <img src="{{ image }}" alt="">
+>>>>>>> 8937144cfd887e0c4e6b5d5249a55e11e9a480fc
       <p class="post-text">{{text}}</p>
     </div>
   </div>
@@ -20,7 +24,11 @@ export default {
     },
     text: String,
     id: Number,
+<<<<<<< HEAD
     image: Object
+=======
+    image: String
+>>>>>>> 8937144cfd887e0c4e6b5d5249a55e11e9a480fc
   },
   data () {
     return {
