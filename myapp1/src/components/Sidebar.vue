@@ -36,7 +36,7 @@
         exact
         class="side-btn"
       >
-        <div class="link-container">Settings</div>
+        <div class="link-container">Редактор постов</div>
       </router-link>
     </div>
   </div>

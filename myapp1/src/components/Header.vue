@@ -1,10 +1,46 @@
 <template>
   <div class="header">
-    <button class="button" @click="goto('onLogin')">Войти</button>
-    <button class="button reg" @click="goto('registration')">Регистрация</button>
+    <button class="button" @click="showLogDialog">Войти</button>
+    <button class="button reg" @click="showRegDialog">Регистрация</button>
+    <my-dialog v-if="isDiagloShown" @close="dialogClose">
+      <template #body>
+        <!-- <RegistrationForm v-if="dialogType === 'reg'" />
+        <LoginForm v-else/> -->
+        <component :is="componentName" />
+      </template>
+    </my-dialog>
   </div>
 </template>
-
+<script>
+import RegistrationForm from './RegistrationForm.vue'
+import LoginForm from './LoginForm.vue'
+import MyDialog from './ui/MyDialog.vue'
+export default {
+  components: { MyDialog, RegistrationForm, LoginForm },
+  data () {
+    return {
+      isDiagloShown: false,
+      dialogType: '',
+      componentName: ''
+    }
+  },
+  methods: {
+    showRegDialog () {
+      this.isDiagloShown = true
+      this.dialogType = 'reg'
+      this.componentName = RegistrationForm
+    },
+    showLogDialog () {
+      this.isDiagloShown = true
+      this.dialogType = 'log'
+      this.componentName = LoginForm
+    },
+    dialogClose () {
+      this.isDiagloShown = false
+    }
+  }
+}
+</script>
 <style>
 .button {
   position: absolute;
@@ -38,6 +74,6 @@
   right: 0;
 }
 .reg {
-    margin-left: 130px;
+  margin-left: 130px;
 }
 </style>
