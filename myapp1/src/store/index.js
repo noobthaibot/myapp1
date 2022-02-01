@@ -1,16 +1,8 @@
 import { createStore } from 'vuex'
-<<<<<<< HEAD
-=======
-import postsStore from './posts/index'
->>>>>>> 8937144cfd887e0c4e6b5d5249a55e11e9a480fc
 import userStore from './user/index'
 
 export default createStore({
   modules: {
-<<<<<<< HEAD
-=======
-    posts: postsStore,
->>>>>>> 8937144cfd887e0c4e6b5d5249a55e11e9a480fc
     user: userStore
   },
   state () {

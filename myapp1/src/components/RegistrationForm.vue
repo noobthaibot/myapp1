@@ -1,20 +1,12 @@
 <template>
     <div class="reg-container">
-<<<<<<< HEAD
         <my-input label="Введите логин" :modelValue="email" @update="onUpdate" v-model="email"/>
-=======
-        <my-input label="Введите логин" :modelValue="name" @update="onUpdate" v-model="name"/>
->>>>>>> 8937144cfd887e0c4e6b5d5249a55e11e9a480fc
         <my-input label="Введите пароль" :modelValue="password" @update="onUpdatePass" v-model="password"/>
         <my-input label="Повторите пароль" :modelValue="secondPassword" @update="onUpdateSecondPass" v-model="secondPassword"/>
         <my-radiobutton label="Выберите пол" :modelValue="gender" @update="onGenderSelect" v-model="gender"/>
         <my-select label="Выберите страну" :modelValue="country" @update="onCountrySelect" v-model="country"/>
         <div class="reg-button">
-<<<<<<< HEAD
             <button @click:="doRegistration" class="btn" @click="doRegistration">Регистрация</button>
-=======
-            <button class="btn" @click="doRegistration">Регистрация</button>
->>>>>>> 8937144cfd887e0c4e6b5d5249a55e11e9a480fc
         </div>
     </div>
 </template>
@@ -34,19 +26,12 @@ export default {
   },
   methods: {
     doRegistration () {
-<<<<<<< HEAD
       this.$store.dispatch('user/login', { email: this.email, password: this.password }).then((result) => {
         console.log('reg result', result)
       })
     },
     onUpdate (modelValue) {
       this.email = modelValue
-=======
-      alert('Вы успешно зарегистритовались!')
-    },
-    onUpdate (modelValue) {
-      this.name = modelValue
->>>>>>> 8937144cfd887e0c4e6b5d5249a55e11e9a480fc
     },
     onUpdatePass (modelValue) {
       this.password = modelValue

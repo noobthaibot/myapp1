@@ -4,12 +4,7 @@
       <div class="modal-wrapper" @click="$emit('close')">
         <div class="modal-container" @click.stop>
           <div class="modal-header">
-<<<<<<< HEAD
             <slot name="body"></slot>
-=======
-            <slot name="reg"></slot>
-            <slot name="log"></slot>
->>>>>>> 8937144cfd887e0c4e6b5d5249a55e11e9a480fc
               <button class="modal-default-button" @click="$emit('close')">
                 <img class="close" src="./../../assets/cancel-circle.png" alt="">
               </button>

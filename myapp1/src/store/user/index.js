@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -16,28 +15,12 @@ export default {
   getters: {
     isAuth (state) {
       return state.uid !== ''
-=======
-function isValidToken (token) {
-  return token !== ''
-}
-
-export default {
-  namespaced: true,
-  state: {
-    token: '',
-    name: ''
-  },
-  getters: {
-    isAuth (state) {
-      return isValidToken(state.token)
->>>>>>> 8937144cfd887e0c4e6b5d5249a55e11e9a480fc
     }
   },
   mutations: {
 
   },
   actions: {
-<<<<<<< HEAD
     login (context, data) {
       const auth = getAuth()
       return signInWithEmailAndPassword(auth, data.email, data.password)
@@ -71,8 +54,4 @@ export default {
 
   }
 
-=======
-
-  }
->>>>>>> 8937144cfd887e0c4e6b5d5249a55e11e9a480fc
 }

@@ -12,7 +12,6 @@ import MyInput from '@/components/ui/MyInput.vue'
 import MyDialog from '@/components/ui/MyDialog.vue'
 import MyRadiobutton from '@/components/ui/MyRadiobutton.vue'
 import MySelect from '@/components/ui/MySelect.vue'
-<<<<<<< HEAD
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDroAdg79XwaNyiku3AnFjsU72xRtt50c0',
@@ -25,8 +24,6 @@ const firebaseConfig = {
 }
 
 initializeApp(firebaseConfig)
-=======
->>>>>>> 8937144cfd887e0c4e6b5d5249a55e11e9a480fc
 
 const app = createApp(App)
 
