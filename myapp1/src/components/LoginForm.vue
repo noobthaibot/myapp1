@@ -4,6 +4,7 @@
         <my-input label="Введите пароль" :modelValue="password" @update="onUpdatePass" v-model="password"/>
         <div>
             <button @click="doLogin">Войти</button>
+            <button @click="googleLogin">Войти через Google</button>
         </div>
     </div>
 </template>

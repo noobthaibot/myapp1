@@ -5,7 +5,8 @@
       :image="item.image"
       :text="item.text"
       :id="item.id"
-      :is-open="item.isOpen"></app-news></div>
+      :is-open="item.isOpen"></app-news>
+      </div>
 </template>
 
 <script>
