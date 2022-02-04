@@ -5,6 +5,7 @@ import {
   initializeApp
 } from 'firebase/app'
 
+import { getDatabase, ref, onValue } from 'firebase/database'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -17,6 +18,7 @@ const firebaseConfig = {
   apiKey: 'AIzaSyDroAdg79XwaNyiku3AnFjsU72xRtt50c0',
   authDomain: 'lazurenko-app.firebaseapp.com',
   projectId: 'lazurenko-app',
+  databaseURL: 'https://lazurenko-app-default-rtdb.europe-west1.firebasedatabase.app/',
   storageBucket: 'lazurenko-app.appspot.com',
   messagingSenderId: '1085136761704',
   appId: '1:1085136761704:web:6b634e745da88035f5dcdd',
@@ -24,6 +26,19 @@ const firebaseConfig = {
 }
 
 initializeApp(firebaseConfig)
+const db = getDatabase()
+const postsRef = ref(db, '/posts')
+
+onValue(postsRef, (snapshot) => {
+  console.log(snapshot.val())
+  store.commit('posts/clear')
+  const postsObject = snapshot.val()
+  console.log(postsObject)
+  for (const [value] of Object.entries(postsObject)) {
+    store.commit('posts/addPost', value)
+  }
+  // snapshot.val().forEach(item => store.commit('posts/addPost'), item)
+})
 
 const app = createApp(App)
 

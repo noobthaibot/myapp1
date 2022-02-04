@@ -2,6 +2,16 @@
   <div class="container-item">
     <div class="news-btn-container">
       <h3 class="post-title">{{ title }}</h3>
+      <div class="about">
+    <h1>Posts page</h1>
+    <h4>{{ $store.getters["posts/count"] }}</h4>
+    <div v-for="post in postArray" :key="post.id" style="text-align: start">
+      <router-link :to="`/post/${post.id}`">
+        {{ post.id }}: {{ post.title }}
+      </router-link>
+      <button @click="doDelete(post.id)">X</button>
+    </div>
+  </div>
     <button class="btn" @click="isOpen = !isOpen">Open</button>
     </div>
     <div class="news-area" v-if="isOpen">
